@@ -9,13 +9,13 @@ class App extends Component {
 
   handleClick = () => {
     if (this.state.active) return
-    this.setState({ active: true })
+    this.setState({active: true})
     window.setTimeout(() => {
-      this.setState({ active: false })
+      this.setState({active: false})
     }, 2000)
   }
 
-  render() {
+  render () {
     const className = this.state.active ? 'open-sign clicked' : 'open-sign'
     return (
       <main className="main">
