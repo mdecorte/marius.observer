@@ -22,7 +22,7 @@ class App extends Component {
         <img
           src={open}
           className={className}
-          alt="logo"
+          alt="logo open"
           onClick={this.handleClick}
         />
       </main>
