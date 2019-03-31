@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import open from './open.png'
+import closed from './closed.png'
 import './App.css'
 
 class App extends Component {
@@ -9,20 +10,25 @@ class App extends Component {
 
   handleClick = () => {
     if (this.state.active) return
-    this.setState({active: true})
+    this.setState({ active: true })
     window.setTimeout(() => {
-      this.setState({active: false})
+      this.setState({ active: false })
     }, 2000)
   }
 
-  render () {
+  isShopOpen = () => {
+    const time = new Date().getHours()
+    return time < 17
+  }
+
+  render() {
     const className = this.state.active ? 'open-sign clicked' : 'open-sign'
     return (
       <main className="main">
         <img
-          src={open}
+          src={this.isShopOpen() ? open : closed}
           className={className}
-          alt="logo open"
+          alt="logo"
           onClick={this.handleClick}
         />
       </main>
