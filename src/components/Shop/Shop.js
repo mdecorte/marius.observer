@@ -19,7 +19,7 @@ class Shop extends Component {
 
   isShopOpen = () => {
     const time = new Date().getHours()
-    return time < 14 && time > 9
+    return time < 17 && time > 9
   }
 
   render() {
